@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức - NTQuan</title>
+    <link rel="stylesheet" href="tintuc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <!-- Logo + Tên Store -->
+        <div class="logo-container">
+            <img src="quan.png" alt="Logo" class="logo">
+            <h1 class="store-name">TruongQuan Store</h1>
+        </div>
+    
+        <!-- Menu chính giữa -->
+        <nav class="nav-menu">
+            <a href="truongquanstore.html">Trang chủ</a>
+            <a href="sanpham.html">Sản phẩm</a>
+            <a href="trangchu.html">Giới thiệu</a>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="https://zalo.me/0867868825">Liên hệ</a>
+
+        </nav>
+    
+        <!-- Thanh tìm kiếm góc phải -->
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm sản phẩm...">
+            <button>Tìm</button>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <div class="container">
+            <video autoplay loop muted playsinline>
+                <source src="itro.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+    </section>
+    
+    
+    <section class="products">
+        <div class="container">
+            <h2>Tin tức mới nhất</h2>
+            <div class="product-list"></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const newsList = [
+        { title: "Apple ra mắt iPhone 15", description: "Sự kiện ra mắt sản phẩm mới của Apple đã chính thức diễn ra...", img: "anh2.webp" },
+        { title: "Samsung Galaxy S24 sắp trình làng", description: "Dự kiến dòng Galaxy S24 sẽ được công bố vào tháng 3...", img: "a3.webp" },
+        { title: "AI và công nghệ tương lai", description: "Trí tuệ nhân tạo đang thay đổi cách chúng ta làm việc và sinh hoạt...", img: "a4.webp" }
+    ];
+
+    const newsContainer = document.querySelector(".product-list"); // Đúng class trong HTML
+    newsList.forEach(news => {
+        const newsItem = document.createElement("div");
+        newsItem.classList.add("news-item");
+        newsItem.innerHTML = `
+            <img src="${news.img}" alt="${news.title}">
+            <h3>${news.title}</h3>
+            <p>${news.description}</p>
+            <a href="#">Đọc tiếp</a>
+        `;
+        newsContainer.appendChild(newsItem);
+    });
+});
+    </script>    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TruongQuan Store. Bản quyền thuộc về chúng tôi.</p>
+            <ul>
+                <li><a href="#">Chính sách bảo mật</a></li>
+                <li><a href="#">Điều khoản sử dụng</a></li>
+                <li><a href="#">Hỗ trợ khách hàng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
